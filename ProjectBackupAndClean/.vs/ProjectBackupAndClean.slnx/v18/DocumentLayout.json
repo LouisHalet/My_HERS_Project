@@ -1,0 +1,193 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\myexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\myexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\cleantask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\cleantask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\backuptask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\backuptask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\backuptaskpart2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\backuptaskpart2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\backupsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\backupsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\panelexecution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\panelexecution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|c:\\users\\louisnonadmin\\documents\\projet_c#\\3_depot_final\\projectbackupandclean\\backupandclean\\mytask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2B6FE6-C41D-4E2F-A2B1-D3C98DD072AE}|BackupAndClean\\BackupAndClean.csproj|solutionrelative:backupandclean\\mytask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClassDiagram.cd",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\ClassDiagram.cd",
+              "RelativeDocumentMoniker": "BackupAndClean\\ClassDiagram.cd",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\ClassDiagram.cd",
+              "RelativeToolTip": "BackupAndClean\\ClassDiagram.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2026-04-24T14:43:00.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskManager.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\TaskManager.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\TaskManager.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\TaskManager.cs",
+              "RelativeToolTip": "BackupAndClean\\TaskManager.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowFgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:41.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PanelExecution.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\PanelExecution.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\PanelExecution.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\PanelExecution.cs",
+              "RelativeToolTip": "BackupAndClean\\PanelExecution.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:39.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MyTask.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\MyTask.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\MyTask.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\MyTask.cs",
+              "RelativeToolTip": "BackupAndClean\\MyTask.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:38.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyException.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\MyException.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\MyException.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\MyException.cs",
+              "RelativeToolTip": "BackupAndClean\\MyException.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:37.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Email.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\Email.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\Email.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\Email.cs",
+              "RelativeToolTip": "BackupAndClean\\Email.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwEIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:31.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CleanTask.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\CleanTask.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\CleanTask.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\CleanTask.cs",
+              "RelativeToolTip": "BackupAndClean\\CleanTask.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAuwEYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:31.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BackupTask.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\BackupTask.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\BackupTask.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\BackupTask.cs",
+              "RelativeToolTip": "BackupAndClean\\BackupTask.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAswIsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:30.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BackupTaskPart2.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\BackupTaskPart2.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\BackupTaskPart2.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\BackupTaskPart2.cs",
+              "RelativeToolTip": "BackupAndClean\\BackupTaskPart2.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAgwKYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:30:02.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BackupSetting.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\BackupSetting.cs",
+              "RelativeDocumentMoniker": "BackupAndClean\\BackupSetting.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\Projet_C#\\3_Depot_final\\ProjectBackupAndClean\\BackupAndClean\\BackupSetting.cs",
+              "RelativeToolTip": "BackupAndClean\\BackupSetting.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAA+wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:29.448Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

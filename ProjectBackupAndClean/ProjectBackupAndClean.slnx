@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BackupAndClean/BackupAndClean.csproj" Id="4d2b6fe6-c41d-4e2f-a2b1-d3c98dd072ae" />
+  <Project Path="ConfigBackup/ConfigBackup.csproj" />
+  <Project Path="UnitTest/UnitTest.csproj" Id="f6dae31d-7d5b-4b99-a1ac-9fc68ed5f92f" />
+</Solution>
