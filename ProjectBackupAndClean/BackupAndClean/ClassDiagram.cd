@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BackupAndClean.Properties.Resources">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAABEAAAAYAAAQAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.BackupSetting">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UACEFAAEqAAAAAAAAAEAAIIQABAQEBECCAAAAAAAAAg=</HashCode>
+      <FileName>BackupSetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.BackupTask">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAgAgAgAABAAAABEABAAEAAAgAAAAAACCAAIAAgE=</HashCode>
+      <FileName>BackupTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.CleanTask">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAgAAAAAAAgAAAAAABAAEAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CleanTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.Email">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAQAAAAAAAAAAQAAAAAAgBACgAggAAAAA=</HashCode>
+      <FileName>Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.Execution">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACDAAAAAIAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Execution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.SourceDestinationEqualException">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.NoSpaceInDrive">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.MyTask">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAgAAAAAAkAAAAAAAAAAACAAA=</HashCode>
+      <FileName>MyTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.PanelExecution">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAABAABAAABAAAAAAACAAACAAABAAJAAAACAAAAA=</HashCode>
+      <FileName>PanelExecution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.Program">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackupAndClean.TaskManager">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAYgAAQAAAAAAAAAACAAAAAAIAggAABAAgAAAAA=</HashCode>
+      <FileName>TaskManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
