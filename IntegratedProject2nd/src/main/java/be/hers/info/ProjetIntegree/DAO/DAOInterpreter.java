@@ -1,0 +1,611 @@
+package be.hers.info.ProjetIntegree.DAO;
+
+import be.hers.info.ProjetIntegree.DTO.DTOUser;
+import be.hers.info.ProjetIntegree.POJO.*;
+
+import oracle.jdbc.OraclePreparedStatement;
+import oracle.jdbc.OracleTypes;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author Wellinger Chloé, Halet Louis
+ * @reviewer Nicolas Jean-Francois, Halet Louis, Wellinger Chloé
+ */
+public class DAOInterpreter extends DAO<Interpreter> {
+
+    /**
+     * Searches for an Interpreter by its numInterpreter.
+     * The Address is loaded eagerly via DAOAddress.
+     * Absences, Skills, Appointments and Beneficiaries are not loaded (lazy loading).
+     *
+     * @param idToSearchInDB the numInterpreter of the Interpreter to search for.
+     * @return The Interpreter if found, null otherwise.
+     * @throws SQLException In case of any SQL problems encountered with this method.
+     */
+    @Override
+    public Interpreter find(int idToSearchInDB) throws SQLException {
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+        Interpreter interpreterFind = null;
+
+        String query = "SELECT numInterpreter, login, password, lastName, firstName, emailAddress, phoneNumber, weeklyWorkHours, FKAddress " +
+                "FROM Interpreter " +
+                "WHERE numInterpreter = ?";
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, idToSearchInDB);
+            rs = prStat.executeQuery();
+
+            if (rs.next()) {
+                DAOAddress daoAddress = new DAOAddress();
+                Address addressInterpreter = daoAddress.find(rs.getInt("FKAddress"));
+
+                interpreterFind = new Interpreter(
+                        rs.getInt("numInterpreter"),
+                        rs.getString("login"),
+                        rs.getString("password"),
+                        rs.getString("lastName"),
+                        rs.getString("firstName"),
+                        rs.getString("phoneNumber"),
+                        rs.getString("emailAddress"),
+                        rs.getInt("weeklyWorkHours"),
+                        addressInterpreter
+                );
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return interpreterFind;
+    }
+
+    /**
+     * Creates a list containing all the Interpreters in the table which aren't resa or coordinator.
+     * For each Interpreter, the Address is loaded eagerly via DAOAddress, the list of academic skills is loaded
+     * eagerly via DAOAcademicSkills and the list of professional skills is loaded eagerly via DAOProfessionalSkills.
+     * Absences and Beneficiaries are not loaded
+     *
+     * @return a list containing all the Interpreters which aren't resa or coordinator
+     * or an empty list if the table is empty.
+     * @throws SQLException In case of any SQL problems encountered with this method.
+     */
+    public List<DTOUser> findAllDTOInterpreterUsers() throws SQLException {
+        List<DTOUser> interpreters = new ArrayList<>();
+        DTOUser interpreter = null;
+        PreparedStatement prStat = null;
+        ResultSet resultSet = null;
+        String query = "SELECT numInterpreter, lastName, firstName, phoneNumber, emailAddress FROM Interpreter i " +
+                "WHERE NOT EXISTS (" +
+                "SELECT 1 FROM Coordinator c " +
+                "WHERE c.FKnumInterpreter = i.numInterpreter)";
+        try {
+            prStat = connect.prepareStatement(query);
+            resultSet = prStat.executeQuery();
+            while (resultSet.next()) {
+                interpreter = new DTOUser(
+                        resultSet.getInt("numInterpreter"),
+                        resultSet.getString("lastName"),
+                        resultSet.getString("firstName"),
+                        resultSet.getString("phoneNumber"),
+                        resultSet.getString("emailAddress")
+                );
+                interpreters.add(interpreter);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, resultSet);
+        }
+        return interpreters;
+    }
+
+    /**
+     * Creates a list containing all the Interpreters in the table.
+     * For each Interpreter, the Address is loaded eagerly via DAOAddress.
+     * Absences, Skills, Appointments and Beneficiaries are not loaded (lazy loading).
+     *
+     * @return a list containing all the Interpreters, or an empty list if the table is empty.
+     * @throws SQLException In case of any SQL problems encountered with this method.
+     */
+    @Override
+    public List<Interpreter> findAll() throws SQLException {
+        List<Interpreter> interpreterList = new ArrayList<>();
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        String query = "SELECT numInterpreter, login, password, lastName, firstName, emailAddress, phoneNumber, weeklyWorkHours, FKAddress " +
+                "FROM Interpreter";
+
+        try {
+            prStat = connect.prepareStatement(query);
+            rs = prStat.executeQuery();
+
+            while (rs.next()) {
+                DAOAddress daoAddress = new DAOAddress();
+                Address addressInterpreter = daoAddress.find(rs.getInt("FKAddress"));
+
+                Interpreter interpreterFind = new Interpreter(
+                        rs.getInt("numInterpreter"),
+                        rs.getString("login"),
+                        rs.getString("password"),
+                        rs.getString("lastName"),
+                        rs.getString("firstName"),
+                        rs.getString("emailAddress"),
+                        rs.getString("phoneNumber"),
+                        rs.getInt("weeklyWorkHours"),
+                        addressInterpreter
+                );
+                interpreterList.add(interpreterFind);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return interpreterList;
+    }
+
+    /**
+     * Adds the Interpreter passed as a parameter to the table,
+     * then inserts its professional and academic skills into the junction tables
+     * ProfessionalSkillInterpreter and AcademicSkillInterpreter.
+     * The numInterpreter is auto-generated by Oracle and retrieved via RETURNING INTO.
+     * It must therefore not be included in the INSERT statement.
+     * Precondition: the Interpreter passed as a parameter cannot be null.
+     * Precondition: the Address of the Interpreter must already exist in the database.
+     * Precondition: all ProfessionalSkill in the list must already exist in the database.
+     * Precondition: all AcademicSkill in the list must already exist in the database.
+     *
+     * @param objectToInsertInDB the Interpreter to be inserted into the table.
+     * @return true if the Interpreter and all its skills were successfully inserted, false otherwise.
+     * @throws SQLException In case of any SQL problems encountered with this method.
+     */
+    @Override
+    public boolean create(Interpreter objectToInsertInDB) throws SQLException {
+        boolean isInserted = false;
+        OraclePreparedStatement prStatInterpreter = null;
+        PreparedStatement prStatProfSkill = null;
+        PreparedStatement prStatAcadSkill = null;
+        ResultSet generateID = null;
+
+        String queryInterpreter = "INSERT INTO Interpreter (login, password, lastName, firstName, emailAddress, " +
+                "phoneNumber, weeklyWorkHours, FKAddress) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?) " +
+                "RETURNING numInterpreter INTO ?";
+
+        String queryProfSkill = "INSERT INTO ProfessionalSkillInterpreter (numProfessionalSkill, numInterpreter) " +
+                "VALUES (?, ?)";
+
+        String queryAcadSkill = "INSERT INTO AcademicSkillInterpreter (numAcademicSkill, numInterpreter) " +
+                "VALUES (?, ?)";
+
+        try {
+            prStatInterpreter = (OraclePreparedStatement) connect.prepareStatement(queryInterpreter);
+            prStatInterpreter.setString(1, objectToInsertInDB.getLogin());
+            prStatInterpreter.setString(2, objectToInsertInDB.getPassword());
+            prStatInterpreter.setString(3, objectToInsertInDB.getLastName());
+            prStatInterpreter.setString(4, objectToInsertInDB.getFirstName());
+            prStatInterpreter.setString(5, objectToInsertInDB.getEmailAddress());
+            prStatInterpreter.setString(6, objectToInsertInDB.getPhoneNumber());
+            prStatInterpreter.setInt(7, objectToInsertInDB.getWeeklyWorkHours());
+            prStatInterpreter.setInt(8, objectToInsertInDB.getAddress().getNumAddress());
+            prStatInterpreter.registerReturnParameter(9, OracleTypes.INTEGER);
+
+            int nbLinesInsert = prStatInterpreter.executeUpdate();
+
+            if (nbLinesInsert > 0) {
+                // Retrieve the generated number
+                generateID = prStatInterpreter.getReturnResultSet();
+                if (!generateID.next()) {
+                    throw new SQLException("[DAOInterpreter] Impossible de récupérer le numInterpreter généré.");
+                }
+                int numInterpreterGenerated = generateID.getInt(1);
+                objectToInsertInDB.setNumInterpreter(numInterpreterGenerated);
+
+                // Insert the professional skills
+                if (objectToInsertInDB.getProfessionalSkillsList() != null && !objectToInsertInDB.getProfessionalSkillsList().isEmpty()) {
+                    prStatProfSkill = connect.prepareStatement(queryProfSkill);
+                    for (ProfessionalSkill ps : objectToInsertInDB.getProfessionalSkillsList()) {
+                        prStatProfSkill.setInt(1, ps.getNumProfessionalSkill());
+                        prStatProfSkill.setInt(2, numInterpreterGenerated);
+                        prStatProfSkill.executeUpdate();
+                    }
+                }
+
+                // Insert the academic skills
+                if (objectToInsertInDB.getAcademicSkillsList() != null && !objectToInsertInDB.getAcademicSkillsList().isEmpty()) {
+                    prStatAcadSkill = connect.prepareStatement(queryAcadSkill);
+                    for (AcademicSkill ps : objectToInsertInDB.getAcademicSkillsList()) {
+                        prStatAcadSkill.setInt(1, ps.getNumAcademicSkill());
+                        prStatAcadSkill.setInt(2, numInterpreterGenerated);
+                        prStatAcadSkill.executeUpdate();
+                    }
+                }
+                isInserted = true;
+            }
+        } finally {
+            closeStatementAndResultSet(prStatInterpreter, generateID);
+            closeStatement(prStatProfSkill);
+            closeStatement(prStatAcadSkill);
+        }
+        return isInserted;
+    }
+
+    /**
+     * Updates all Interpreter fields in the table (except its numInterpreter)
+     * The Address is updated via its numAddress (the Address itself is not updated here).
+     * Precondition: the Interpreter passed as a parameter cannot be null.
+     *
+     * @param objectToUpdateInDB the Interpreter containing the numInterpreter and the fields to update.
+     * @return true if the Interpreter was successfully updated, false otherwise.
+     * @throws SQLException In case of any SQL problems encountered with this method.
+     */
+    @Override
+    public boolean update(Interpreter objectToUpdateInDB) throws SQLException {
+        boolean isUpdated = false;
+        PreparedStatement prStat = null;
+
+        String query = "UPDATE Interpreter " +
+                "SET login = ?, password = ?, lastName = ?, firstName = ?, emailAddress = ?, phoneNumber = ?, weeklyWorkHours = ?, FKAddress = ?" +
+                " WHERE numInterpreter = ?";
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setString(1, objectToUpdateInDB.getLogin());
+            prStat.setString(2, objectToUpdateInDB.getPassword());
+            prStat.setString(3, objectToUpdateInDB.getLastName());
+            prStat.setString(4, objectToUpdateInDB.getFirstName());
+            prStat.setString(5, objectToUpdateInDB.getEmailAddress());
+            prStat.setString(6, objectToUpdateInDB.getPhoneNumber());
+            prStat.setInt(7, objectToUpdateInDB.getWeeklyWorkHours());
+            prStat.setInt(8, objectToUpdateInDB.getAddress().getNumAddress());
+            prStat.setInt(9, objectToUpdateInDB.getNumInterpreter());
+
+            int nbLinesUpdate = prStat.executeUpdate();
+            if (nbLinesUpdate > 0) {
+                isUpdated = true;
+            }
+        } finally {
+            closeStatement(prStat);
+        }
+        return isUpdated;
+    }
+
+    /**
+     * Deletes the Interpreter whose numInterpreter matches the numInterpreter
+     * of the Interpreter passed as a parameter.
+     * Precondition: the Interpreter passed as a parameter cannot be null.
+     *
+     * @param objectToDeleteFormDB the Interpreter to be deleted from the table.
+     * @return true if the Interpreter was successfully deleted, false otherwise.
+     * @throws SQLException In case of any SQL problems encountered with this method.
+     */
+    @Override
+    public boolean delete(Interpreter objectToDeleteFormDB) throws SQLException {
+        boolean isDeleted = false;
+        PreparedStatement prStat = null;
+
+        String query = "DELETE FROM Interpreter " +
+                "WHERE numInterpreter = ?";
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, objectToDeleteFormDB.getNumInterpreter());
+
+            int nbLinesDelete = prStat.executeUpdate();
+            if (nbLinesDelete > 0) {
+                isDeleted = true;
+            }
+        } finally {
+            closeStatement(prStat);
+        }
+        return isDeleted;
+    }
+
+    /**
+     * Authenticates an interpreter using their login and password
+     * If the matching interpreter is also referenced as a coordinator, the corresponding Coordinator
+     * is returned instead of the Interpreter
+     *
+     * @param login    the interpreter's login
+     * @param password the password, hashed in SQL before comparison
+     * @return the authenticated User (Interpreter or Coordinator), or null if no match is found
+     * @throws SQLException if a database access error occurs
+     */
+    public User getInterpreterAuthentification(String login, String password) throws SQLException {
+        User user = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        String query = "SELECT * FROM Interpreter " +
+                "WHERE login = ? AND password = STANDARD_HASH(?, 'SHA256')";
+
+        try {
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setString(1, login);
+            preparedStatement.setString(2, password);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                DAOCoordinator daoCoordinator = new DAOCoordinator();
+                Coordinator coordinator = daoCoordinator.findByFKnumInterpreter(resultSet.getInt("numInterpreter"));
+                ;
+
+                if (coordinator == null) {
+                    DAOInterpreter daoInterpreter = new DAOInterpreter();
+                    user = daoInterpreter.find(resultSet.getInt("numInterpreter"));
+                } else {
+                    user = coordinator;
+                }
+            }
+        } finally {
+            closeStatementAndResultSet(preparedStatement, resultSet);
+        }
+        return user;
+    }
+
+    /**
+     * Create a list of professional skills related to the interpreter.
+     *
+     * @param numInterpreter the interpreter's ID
+     * @return a list of professional skills related to the interpreter.
+     * @throws SQLException if a database access error occurs
+     */
+    public List<ProfessionalSkill> getProfessionalSkill(int numInterpreter) throws SQLException {
+        List<ProfessionalSkill> professionalSkillList = new ArrayList<>();
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        String query = "SELECT numProfessionalSkill " +
+                "FROM ProfessionalSkillInterpreter " +
+                "WHERE numInterpreter = ?";
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numInterpreter);
+            rs = prStat.executeQuery();
+
+            while (rs.next()) {
+                DAOProfessionalSkill daoProfessionalSkill = new DAOProfessionalSkill();
+                ProfessionalSkill professionalSkill = daoProfessionalSkill.find(rs.getInt("numProfessionalSkill"));
+                professionalSkillList.add(professionalSkill);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return professionalSkillList;
+    }
+
+    /**
+     * Create the list of Academic Skills related to the interpreter
+     *
+     * @param numInterpreter the interpreter's ID
+     * @return the list of Academic Skills related to the interpreter
+     * @throws SQLException if a database access error occurs
+     */
+    public List<AcademicSkill> getAcademicSkill(int numInterpreter) throws SQLException {
+        List<AcademicSkill> academicSkillList = new ArrayList<>();
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        String query = "SELECT numAcademicSkill " +
+                "FROM AcademicSkillInterpreter " +
+                "WHERE numInterpreter = ?";
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numInterpreter);
+            rs = prStat.executeQuery();
+
+            while (rs.next()) {
+                DAOAcademicSkill daoAcademicSkill = new DAOAcademicSkill();
+                AcademicSkill academicSkill = daoAcademicSkill.find(rs.getInt("numAcademicSkill"));
+                academicSkillList.add(academicSkill);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return academicSkillList;
+    }
+
+    /**
+     * Updates the Interpreter's password whose numInterpreter matches the id
+     * of the Interpreter passed as a parameter
+     * Precondition: the Interpreter passed as a parameter cannot be null
+     *
+     * @param objectToUpdatePassword the Interpreter whose password needs to be updated
+     * @return true if the Interpreter's password was successfully updated, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public boolean updatePassword(Interpreter objectToUpdatePassword) throws SQLException {
+        boolean passwordUpdated = false;
+        PreparedStatement preparedStatement = null;
+        String query = "UPDATE Interpreter SET password = ? WHERE numInterpreter = ?";
+
+        try {
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setString(1, objectToUpdatePassword.getPassword());
+            preparedStatement.setInt(2, objectToUpdatePassword.getNumInterpreter());
+
+            if (preparedStatement.executeUpdate() > 0) {
+                passwordUpdated = true;
+            }
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return passwordUpdated;
+    }
+
+    /** Checks whether the given plaintext password matches the stored password of the interpreter.
+     * The password is hashed in SQL via STANDARD_HASH (SHA256) before comparison
+     * Used to verify the interpreter's current password before allowing a password change
+     *
+     * @param numInterpreter the id of the interpreter whose password is checked
+     * @param passwordToCheck the plaintext password to verify against the stored hash
+     * @return true if the password matches the one stored for this interpreter, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public boolean checkOldPassword(int numInterpreter, String passwordToCheck) throws SQLException {
+        boolean samePassword = false;
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String query = "SELECT numInterpreter " +
+                "FROM Interpreter " +
+                "WHERE numInterpreter = ? AND password = STANDARD_HASH(?, 'SHA256')";
+
+        try {
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, numInterpreter);
+            preparedStatement.setString(2, passwordToCheck);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()) {
+                samePassword = true;
+            }
+        } finally {
+            closeStatementAndResultSet(preparedStatement, resultSet);
+        }
+
+        return samePassword;
+    }
+
+    /**
+     * Adds the professional skill designated by its number to the interpreter in question
+     *
+     * @param numInterpreter       the interpreter's ID
+     * @param numProfessionalSkill the ID of the professional skill
+     * @return true if the addition was successful, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public boolean addProfessionalSkillToInterpreter(int numInterpreter, int numProfessionalSkill) throws SQLException {
+        boolean isInserted = false;
+        PreparedStatement prStat = null;
+        String query = "INSERT INTO ProfessionalSkillInterpreter (numProfessionalSkill, numInterpreter) " +
+                "VALUES (?, ?)";
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numProfessionalSkill);
+            prStat.setInt(2, numInterpreter);
+            prStat.executeUpdate();
+            isInserted = true;
+
+        } finally {
+            closeStatement(prStat);
+        }
+        return isInserted;
+
+    }
+
+    /**
+     * Removes the professional skill designated by its number from the interpreter concerned
+     *
+     * @param numInterpreter       the interpreter's ID
+     * @param numProfessionalSkill the ID of the professional skill
+     * @return true if the deletion was successful, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public boolean deleteProfessionalSkillToInterpreter(int numInterpreter, int numProfessionalSkill) throws SQLException {
+        boolean isDeleted = false;
+        PreparedStatement prStat = null;
+        String query = "DELETE FROM ProfessionalSkillInterpreter " +
+                "WHERE numInterpreter = ? AND numProfessionalSkill = ?";
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numInterpreter);
+            prStat.setInt(2, numProfessionalSkill);
+            int nbLinesDelete = prStat.executeUpdate();
+            if (nbLinesDelete > 0) {
+                isDeleted = true;
+            }
+
+
+        } finally {
+            closeStatement(prStat);
+        }
+        return isDeleted;
+
+    }
+
+    /**
+     * Add the academic skill designated by its number to the relevant interpreter
+     *
+     * @param numInterpreter   the interpreter's ID
+     * @param numAcademicSkill the ID of the academic skill
+     * @return true if the addition was successful, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public boolean addAcademicSkillToInterpreter(int numInterpreter, int numAcademicSkill) throws SQLException {
+        boolean isInserted = false;
+        PreparedStatement prStat = null;
+        String query = "INSERT INTO AcademicSkillInterpreter (numAcademicSkill, numInterpreter) " +
+                "VALUES (?, ?)";
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numAcademicSkill);
+            prStat.setInt(2, numInterpreter);
+            prStat.executeUpdate();
+            isInserted = true;
+
+        } finally {
+            closeStatement(prStat);
+        }
+        return isInserted;
+
+    }
+
+    /**
+     * Delete the academic skill designated by its number to the relevant interpreter
+     *
+     * @param numInterpreter   the interpreter's ID
+     * @param numAcademicSkill the ID of the academic skill
+     * @return true if the deletion was successful, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public boolean deleteAcademicSkillToInterpreter(int numInterpreter, int numAcademicSkill) throws SQLException {
+        boolean isDeleted = false;
+        PreparedStatement prStat = null;
+        String query = "DELETE FROM AcademicSkillInterpreter " +
+                "WHERE numInterpreter = ? AND numAcademicSkill = ?";
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numInterpreter);
+            prStat.setInt(2, numAcademicSkill);
+            int nbLinesDelete = prStat.executeUpdate();
+            if (nbLinesDelete > 0) {
+                isDeleted = true;
+            }
+        } finally {
+            closeStatement(prStat);
+        }
+        return isDeleted;
+
+    }
+
+    /**
+     * Return the number of interpreters in the interpreter table
+     *
+     * @return the number of interpreters in the interpreter table
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public int countNumberInterpreters() throws SQLException {
+        int numberInterpreters = 0;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String query = "SELECT COUNT(*) FROM Interpreter";
+
+        try {
+            preparedStatement = connect.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next())
+                numberInterpreters = resultSet.getInt(1);
+        } finally {
+            closeStatementAndResultSet(preparedStatement, resultSet);
+        }
+        return numberInterpreters;
+    }
+}

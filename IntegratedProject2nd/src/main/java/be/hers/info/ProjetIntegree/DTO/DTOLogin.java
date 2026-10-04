@@ -1,0 +1,62 @@
+package be.hers.info.ProjetIntegree.DTO;
+
+/**
+ * @author Vatafu Jean
+ * @reviewer Nicolas Jean-Francois, Wellinger Chloé
+ */
+public class DTOLogin {
+
+    private String login;
+    private String password;
+
+    /**
+     * Creates an empty LoginDTO object
+     */
+    public DTOLogin() {
+        this.login = "";
+        this.password = "";
+    }
+
+    /**
+     * Creates a filled LoginDTO
+     *
+     * @param login    the user's login
+     * @param password the user's password
+     */
+    public DTOLogin(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    /**
+     * Sets the login
+     *
+     * @param login the user's login
+     */
+    public void setLogin(String login) {
+        this.login = login.trim();
+    }
+
+    /**
+     * Sets the password
+     *
+     * @param password the user's password
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the user's login
+     */
+    public String getLogin() {
+        return this.login;
+    }
+
+    /**
+     * @return the user's password
+     */
+    public String getPassword() {
+        return this.password;
+    }
+}

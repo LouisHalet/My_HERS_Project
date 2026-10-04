@@ -1,0 +1,351 @@
+package be.hers.info.ProjetIntegree.DAO;
+
+import be.hers.info.ProjetIntegree.POJO.Referrer;
+import oracle.jdbc.OraclePreparedStatement;
+import oracle.jdbc.OracleTypes;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author Nicolas Jean-François
+ * @reviewer Halet Louis
+ */
+public class DAOReferrer extends DAO<Referrer> {
+
+    /**
+     * Searches for a Referrer by its numReferer.
+     * The Establishment is not loaded (lazy loading).
+     *
+     * @param objectToSearchInDB the numReferer of the Referrer to search for
+     * @return The Referrer if found, null otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    @Override
+    public Referrer find(int objectToSearchInDB) throws SQLException {
+        String query = "SELECT numReferer, firstName, lastName, phoneNumber, emailAddress, FKEstablishment " +
+                "FROM Referrer " +
+                "WHERE numReferer = ?";
+        Referrer referrer = null;
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, objectToSearchInDB);
+            rs = prStat.executeQuery();
+
+            if (rs.next()) {
+                referrer = new Referrer();
+                referrer.setNumReferrer(rs.getInt("numReferer"));
+                referrer.setName(rs.getString("firstName"));
+                referrer.setSurname(rs.getString("lastName"));
+                referrer.setPhoneNumber(rs.getString("phoneNumber"));
+                referrer.setAddressMail(rs.getString("emailAddress"));
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return referrer;
+    }
+
+    /**
+     * Creates a list containing all the Referrers in the Referrer table without an Establishment.
+     *
+     * @return A list containing all the Referrers, or an empty list if the table is empty
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public List<Referrer> findAllWithoutEstablishment() throws SQLException {
+        String query = "SELECT NUMREFERER, FIRSTNAME, LASTNAME, PHONENUMBER, EMAILADDRESS " +
+                "FROM Referrer " +
+                "WHERE FKEstablishment IS NULL";
+        List<Referrer> referrerList = new ArrayList<>();
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        try {
+            prStat = connect.prepareStatement(query);
+            rs = prStat.executeQuery();
+
+            while (rs.next()) {
+                Referrer referrer = new Referrer();
+                referrer.setNumReferrer(rs.getInt("NUMREFERER"));
+                referrer.setName(rs.getString("FIRSTNAME"));
+                referrer.setSurname(rs.getString("LASTNAME"));
+                referrer.setPhoneNumber(rs.getString("PHONENUMBER"));
+                referrer.setAddressMail(rs.getString("EMAILADDRESS"));
+                referrerList.add(referrer);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return referrerList;
+    }
+
+    /**
+     * Creates a list containing all the Referrers in the Referrer table.
+     * The Establishment is not loaded for any Referrer (lazy loading).
+     *
+     * @return A list containing all the Referrers, or an empty list if the table is empty
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    @Override
+    public List<Referrer> findAll() throws SQLException {
+        String query = "SELECT numReferer, firstName, lastName, phoneNumber, emailAddress, FKEstablishment " +
+                "FROM Referrer";
+        List<Referrer> referrerList = new ArrayList<>();
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        try {
+            prStat = connect.prepareStatement(query);
+            rs = prStat.executeQuery();
+
+            while (rs.next()) {
+                Referrer referrer = new Referrer();
+                referrer.setNumReferrer(rs.getInt("numReferer"));
+                referrer.setName(rs.getString("firstName"));
+                referrer.setSurname(rs.getString("lastName"));
+                referrer.setPhoneNumber(rs.getString("phoneNumber"));
+                referrer.setAddressMail(rs.getString("emailAddress"));
+
+                if (rs.getObject("FKEstablishment") != null) {
+                    referrer.setRefEstablishment(new DAOEstablishment().find(rs.getInt("FKEstablishment")));
+                }
+
+                referrerList.add(referrer);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return referrerList;
+    }
+
+    /**
+     * Adds the Referrer passed as a parameter to the Referrer table.
+     * The numReferer is auto-generated by Oracle and retrieved via RETURNING INTO.
+     * It must therefore not be included in the INSERT statement.
+     * Precondition: the Referrer passed as a parameter cannot be null.
+     *
+     * @param objectToInsertInDB the Referrer to be inserted into the table
+     * @return true if the Referrer was successfully inserted, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    @Override
+    public boolean create(Referrer objectToInsertInDB) throws SQLException {
+        boolean isCreated = false;
+        String query = "INSERT INTO Referrer (firstName, lastName, phoneNumber, emailAddress, FKEstablishment) " +
+                "VALUES (?, ?, ?, ?, ?) " +
+                "RETURNING numReferer INTO ?";
+
+        OraclePreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        try {
+            prStat = (OraclePreparedStatement) connect.prepareStatement(query);
+            prStat.setString(1, objectToInsertInDB.getName());
+            prStat.setString(2, objectToInsertInDB.getSurname());
+            prStat.setString(3, objectToInsertInDB.getPhoneNumber());
+            prStat.setString(4, objectToInsertInDB.getAddressMail());
+
+            if (objectToInsertInDB.getRefEstablishment() != null) {
+                prStat.setInt(5, objectToInsertInDB.getRefEstablishment().getNumEstablishment());
+            } else {
+                prStat.setNull(5, java.sql.Types.INTEGER);
+            }
+            prStat.registerReturnParameter(6, OracleTypes.INTEGER);
+
+            int nbreLigne = prStat.executeUpdate();
+
+            if (nbreLigne > 0) {
+                rs = prStat.getReturnResultSet();
+                if (!rs.next()) {
+                    throw new SQLException("[DAOReferrer] Impossible de récupérer le numReferer généré.");
+                }
+                objectToInsertInDB.setNumReferrer(rs.getInt(1));
+                isCreated = true;
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return isCreated;
+    }
+
+    /**
+     * Updates all Referrer fields in the table except its numReferer.
+     * The Establishment is updated via its numEstablishment (the Establishment itself is not updated here).
+     * Precondition: the Referrer passed as a parameter cannot be null.
+     *
+     * @param objectToUpdateInDB the Referrer containing the numReferer and the fields to update
+     * @return true if the Referrer was successfully updated, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    @Override
+    public boolean update(Referrer objectToUpdateInDB) throws SQLException {
+        boolean isUpdated = false;
+        String query = "UPDATE Referrer " +
+                "SET firstName = ?, lastName = ?, phoneNumber = ?, emailAddress = ?, FKEstablishment = ? " +
+                "WHERE numReferer = ?";
+
+        PreparedStatement prStat = null;
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setString(1, objectToUpdateInDB.getName());
+            prStat.setString(2, objectToUpdateInDB.getSurname());
+            prStat.setString(3, objectToUpdateInDB.getPhoneNumber());
+            prStat.setString(4, objectToUpdateInDB.getAddressMail());
+
+            if (objectToUpdateInDB.getRefEstablishment() != null) {
+                prStat.setInt(5, objectToUpdateInDB.getRefEstablishment().getNumEstablishment());
+            } else {
+                prStat.setNull(5, java.sql.Types.INTEGER);
+            }
+
+            prStat.setInt(6, objectToUpdateInDB.getNumReferrer());
+
+            int nbreLigne = prStat.executeUpdate();
+            if (nbreLigne > 0) {
+                isUpdated = true;
+            }
+        } finally {
+            closeStatement(prStat);
+        }
+        return isUpdated;
+    }
+
+    /**
+     * This method update the referrer link a new Establishment to objectToUpdateInDb.
+     *
+     * @param objectToUpdateInDB is the object to update.
+     * @param numEstablishment   is the value of the Establishment to link to the Referrer.
+     * @return true if the update was made successfuly else false.
+     * @throws SQLException if the DB encountered a problem.
+     */
+    public boolean update(Referrer objectToUpdateInDB, int numEstablishment) throws SQLException {
+        boolean isUpdated = false;
+        String query = "UPDATE Referrer " +
+                "SET FKEstablishment = ? " +
+                "WHERE numReferer = ?";
+        PreparedStatement prStat = null;
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numEstablishment);
+            prStat.setInt(2, objectToUpdateInDB.getNumReferrer());
+
+            int nbreLigne = prStat.executeUpdate();
+            if (nbreLigne > 0) {
+                isUpdated = true;
+            }
+        } finally {
+            closeStatement(prStat);
+        }
+        return isUpdated;
+    }
+
+    /**
+     * Deletes the Referrer whose numReferer matches the numReferer of the Referrer passed as a parameter.
+     * Precondition: the Referrer passed as a parameter cannot be null.
+     *
+     * @param objectToDeleteFormDB the Referrer to be deleted from the table
+     * @return true if the Referrer was successfully deleted, false otherwise
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    @Override
+    public boolean delete(Referrer objectToDeleteFormDB) throws SQLException {
+        boolean isDeleted = false;
+        String query = "DELETE FROM Referrer " +
+                "WHERE numReferer = ?";
+
+        PreparedStatement prStat = null;
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, objectToDeleteFormDB.getNumReferrer());
+
+            int nbreLigne = prStat.executeUpdate();
+            if (nbreLigne > 0) {
+                isDeleted = true;
+            }
+        } finally {
+            closeStatement(prStat);
+        }
+        return isDeleted;
+    }
+
+    /**
+     * Searches for all Referrers linked to a given Establishment.
+     * The Establishment is not loaded (lazy loading).
+     *
+     * @param numEstablishment the id of the Establishment
+     * @return A list of Referrers linked to the Establishment, or an empty list if none are found
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public List<Referrer> findAllByEstablishment(int numEstablishment) throws SQLException {
+        String query = "SELECT numReferer, firstName, lastName, phoneNumber, emailAddress, FKEstablishment " +
+                "FROM Referrer " +
+                "WHERE FKEstablishment = ?";
+        List<Referrer> referrerList = new ArrayList<>();
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numEstablishment);
+            rs = prStat.executeQuery();
+
+            while (rs.next()) {
+                Referrer referrer = new Referrer();
+                referrer.setNumReferrer(rs.getInt("numReferer"));
+                referrer.setName(rs.getString("firstName"));
+                referrer.setSurname(rs.getString("lastName"));
+                referrer.setPhoneNumber(rs.getString("phoneNumber"));
+                referrer.setAddressMail(rs.getString("emailAddress"));
+                referrerList.add(referrer);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return referrerList;
+    }
+
+    /**
+     * Searches for all Referrers who work at a certain Establishment
+     * The Establishment is not loaded (lazy loading).
+     *
+     * @param numEstablishment the id of the Establishment
+     * @return A list of Referrers linked to the Establishment, or an empty list if none are found
+     * @throws SQLException In case of any SQL problems encountered with this method
+     */
+    public List<Referrer> findAllByWork(int numEstablishment) throws SQLException {
+        String query = "SELECT r.numReferer, r.firstName, r.lastName, r.phoneNumber, r.emailAddress, r.FKEstablishment " +
+                "FROM Referrer r " +
+                "JOIN Work w on r.numReferer = w.numReferer " +
+                "WHERE w.numEstablishment = ?";
+        List<Referrer> referrerList = new ArrayList<>();
+        PreparedStatement prStat = null;
+        ResultSet rs = null;
+
+        try {
+            prStat = connect.prepareStatement(query);
+            prStat.setInt(1, numEstablishment);
+            rs = prStat.executeQuery();
+
+            while (rs.next()) {
+                Referrer referrer = new Referrer();
+                referrer.setNumReferrer(rs.getInt("numReferer"));
+                referrer.setName(rs.getString("firstName"));
+                referrer.setSurname(rs.getString("lastName"));
+                referrer.setPhoneNumber(rs.getString("phoneNumber"));
+                referrer.setAddressMail(rs.getString("emailAddress"));
+                referrerList.add(referrer);
+            }
+        } finally {
+            closeStatementAndResultSet(prStat, rs);
+        }
+        return referrerList;
+    }
+}

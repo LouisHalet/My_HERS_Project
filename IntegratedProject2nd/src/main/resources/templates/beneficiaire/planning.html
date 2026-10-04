@@ -1,0 +1,166 @@
+<!--
+@author Wellinger Chloé
+@reviewer Halet Louis, Nicolas Jean-François
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+    <head th:replace="~{common/head :: head('Mon Planning', '/css/beneficiaire/planning.css')}"></head>
+
+    <body th:attr="data-num-beneficiary=${numBeneficiary}">
+        <nav th:replace="~{common/navbar :: navbar(activeTab='planning', userRole=${userRole}, userName=${userName}, breadcrumb=null, isAdmin=${isAdmin})}"></nav>
+
+        <div class="container-fluid py-2 px-2 px-md-5">
+
+            <div class="text-center mb-2">
+                <h1 class="fw-bold text-primary">Votre horaire de la semaine</h1>
+            </div>
+
+            <div id="planning-toolbar" class="mb-2 px-2 px-md-5">
+                <div class="d-none d-lg-grid" style="grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0.5rem;">
+                    <div></div>
+
+                    <div class="d-flex gap-3 small text-muted text-nowrap justify-content-center">
+                        <span><span class="badge" style="background-color:#81c784;">&nbsp;<i class="bi bi-check-circle" style="font-size:0.7rem;"></i>&nbsp;</span> Demande Acceptée</span>
+                        <span><span class="badge" style="background-color:#f0ad4e;">&nbsp;<i class="bi bi-clock" style="font-size:0.7rem;"></i>&nbsp;</span> Demande en attente</span>
+                        <span><span class="badge" style="background-color:#f28b82;">&nbsp;<i class="bi bi-x-circle" style="font-size:0.7rem;"></i>&nbsp;</span> Demande Refusée/Annulée</span>
+                        <span><span class="badge" style="background-color:#b39ddb;">&nbsp;&nbsp;</span> Horaire de Base</span>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary btn-sm"
+                                data-bs-toggle="modal" data-bs-target="#modalRDV">
+                            <i class="bi bi-plus-lg me-1"></i> Demander un RDV
+                        </button>
+                    </div>
+                </div>
+
+                <div class="d-lg-none mt-2">
+                    <button type="button" class="btn btn-primary btn-sm w-100"
+                            data-bs-toggle="modal" data-bs-target="#modalRDV">
+                        <i class="bi bi-plus-lg me-1"></i> Demander un RDV
+                    </button>
+                </div>
+            </div>
+
+            <div id="calendar"></div>
+        </div>
+
+        <div class="modal fade" id="modalRDV" tabindex="-1" aria-labelledby="modalRDVLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom">
+                        <h5 class="modal-title fw-bold w-100 text-center" id="modalRDVLabel">Demander un rendez-vous</h5>
+                        <button type="button" class="btn-close position-absolute end-0 me-3"
+                                data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body px-4 py-3">
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label small fw-semibold">Date début</label>
+                                <input type="date" id="dateStart" class="form-control form-control-sm"/>
+                            </div>
+                            <div class="col">
+                                <label class="form-label small fw-semibold">Date fin</label>
+                                <input type="date" id="dateEnd" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Plage Horaire</label>
+                            <div class="d-flex gap-2" id="plageHoraire">
+                                <select id="startHour" class="form-select form-select-sm" size="5"></select>
+                                <select id="endHour" class="form-select form-select-sm" size="5"></select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="fullDay"/>
+                                <label class="form-check-label small" for="fullDay">Journée complète</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Matière</label>
+                            <select id="rdvAcademicSkill" class="form-select form-select-sm">
+                                <option value="" disabled selected>Choisissez une matière</option>
+                                <option th:each="skill : ${academicSkillList}"
+                                        th:value="${skill.numAcademicSkill}"
+                                        th:text="${skill.designation}"></option>
+                            </select>
+                            <div id="rdvAcademicSkillsError" class="text-danger small mt-1" style="display:none;">Veuillez sélectionner une matière.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Compétence requise</label>
+                            <select id="rdvProfessionalSkill" class="form-select form-select-sm">
+                                <option value="" disabled selected>Choisissez une compétence</option>
+                                <option th:each="skill : ${professionalSkillList}"
+                                        th:value="${skill.numProfessionalSkill}"
+                                        th:text="${skill.designation}"></option>
+                            </select>
+                            <div id="rdvCompsError" class="text-danger small mt-1" style="display:none;">Veuillez sélectionner une compétence requise.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Établissement</label>
+                            <select id="rdvEstablishment" class="form-select form-select-sm">
+                                <option value="" disabled selected>Choisissez un établissement</option>
+                                <option th:each="establishment : ${establishmentList}"
+                                        th:value="${establishment.numEstablishment}"
+                                        th:text="${establishment.name}"></option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Local</label>
+                            <input type="text" id="rdvLocal" class="form-control form-control-sm" placeholder="Ex: Local M5, Labo 2..."/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Description <span class="text-muted fw-normal">(facultatif)</span></label>
+                            <textarea id="rdvDescription" class="form-control form-control-sm" rows="2" placeholder="Texte..."></textarea>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer border-top justify-content-center gap-2">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="btnSend">
+                            <i class="bi bi-send me-1"></i> Envoyer la demande
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalEvent" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalEventTitle"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="modalEventBody"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script th:src="@{/js/fullcalendar.min.js}"></script>
+        <script th:src="@{/js/beneficiaire/planning.js}"></script>
+
+        <div class="d-flex d-lg-none gap-2 small text-muted flex-wrap justify-content-center mt-3 mb-2 px-3">
+            <span><span class="badge" style="background-color:#81c784;">&nbsp;<i class="bi bi-check-circle" style="font-size:0.7rem;"></i>&nbsp;</span> Acceptée</span>
+            <span><span class="badge" style="background-color:#f0ad4e;">&nbsp;<i class="bi bi-clock" style="font-size:0.7rem;"></i>&nbsp;</span> En attente</span>
+            <span><span class="badge" style="background-color:#f28b82;">&nbsp;<i class="bi bi-x-circle" style="font-size:0.7rem;"></i>&nbsp;</span> Refusée</span>
+            <span><span class="badge" style="background-color:#b39ddb;">&nbsp;&nbsp;</span> Horaire de base</span>
+        </div>
+
+        <div th:replace="~{common/footer :: footer}"></div>
+    </body>
+</html>

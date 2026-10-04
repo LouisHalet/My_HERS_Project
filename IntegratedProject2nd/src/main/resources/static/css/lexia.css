@@ -1,0 +1,73 @@
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 60px;
+}
+
+.navbar {
+    background-color: #f0ecf8 !important;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.navbar .nav-link.active {
+    background-color: #593196;
+    color: #ffffff !important;
+    border-radius: 8px;
+    padding: 6px 14px;
+}
+
+.navbar .nav-link {
+    font-size: 0.875rem;
+}
+
+.navbar .btn {
+    font-size: 0.875rem;
+    padding: 4px 10px;
+}
+
+.btn {
+    border-radius: 8px !important;
+}
+
+#calendar {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+#calendar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.50);
+}
+
+@media (max-width: 992px) {
+    /* On mobile, stacks the username and logout button vertically,
+       separated from the nav links by a top border. */
+    .navbar .d-flex.align-items-center.gap-3 {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+        padding-top: 0.5rem;
+        border-top: 1px solid #dee2e6;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    /* Makes the logout button full width on mobile. */
+    #formLogout,
+    #formLogout .btn {
+        width: 100%;
+    }
+
+    /* Makes the username link full width on mobile. */
+    .navbar .fw-semibold {
+        width: 100%;
+    }
+}

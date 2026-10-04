@@ -1,0 +1,183 @@
+.table-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    overflow: hidden;
+    border: 1.5px solid #e8e0f5;
+}
+
+.table-indispo {
+    margin-bottom: 0;
+}
+
+.table-indispo thead tr {
+    background-color: #f8f5ff;
+    border-bottom: 2px solid #e8e0f5;
+}
+
+.table-indispo thead th {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #212529;
+    padding: 14px 16px;
+    border: none;
+    text-align: center;
+    background-color: #e9e5f4;
+}
+
+.table-indispo tbody td {
+    font-size: 0.875rem;
+    padding: 14px 16px;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #f0ecf8;
+    color: #333;
+}
+
+.table-indispo tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-indispo tbody tr:hover {
+    background-color: #faf8ff;
+}
+
+.badge-statut {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+    min-width: 90px;
+    text-align: center;
+}
+
+.badge-statut.approved { background-color: #28a745; }
+.badge-statut.refused  { background-color: #dc3545; }
+.badge-statut.pending  { background-color: #fd7e14; }
+
+.actions-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-action {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: default;
+    padding: 2px 4px;
+    color: #ccc;
+    transition: color 0.15s;
+}
+
+.btn-action.active {
+    cursor: pointer;
+}
+
+.btn-action.edit.active  { color: #593196; }
+.btn-action.delete.active { color: #dc3545; }
+
+.btn-action.edit.active:hover   { color: #3d1f6e; }
+.btn-action.delete.active:hover { color: #a71d2a; }
+
+.pagination .page-link {
+    color: #593196;
+    border-color: #e8e0f5;
+    font-size: 0.875rem;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #593196;
+    border-color: #593196;
+    color: #fff;
+}
+
+.pagination .page-link:hover {
+    background-color: #f0ecf8;
+    color: #593196;
+}
+
+.modal-rounded {
+    border-radius: 16px !important;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+    /* Buttons full width */
+    .d-flex.justify-content-end {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .d-flex.justify-content-end .dropdown,
+    .d-flex.justify-content-end > button {
+        width: 100%;
+    }
+
+    .d-flex.justify-content-end .dropdown .btn,
+    .d-flex.justify-content-end .dropdown-menu {
+        width: 100%;
+    }
+
+    /* Hide table header */
+    .table-indispo thead {
+        display: none;
+    }
+
+    /* Each row becomes a card */
+    .table-indispo tbody tr {
+        display: block;
+        border: 1.5px solid #e8e0f5;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        padding: 10px 14px;
+        background: #fff;
+    }
+
+    .table-indispo tbody tr:hover {
+        background-color: #faf8ff;
+    }
+
+    /* Remove bottom border on cells */
+    .table-indispo tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 6px 0;
+        border-bottom: 1px solid #f0ecf8;
+        font-size: 0.85rem;
+    }
+
+    .table-indispo tbody td:last-child {
+        border-bottom: none;
+    }
+
+    /* Label before each cell value */
+    .table-indispo tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #593196;
+        text-align: left;
+        flex-shrink: 0;
+        margin-right: 10px;
+        font-size: 0.82rem;
+    }
+
+    .actions-cell {
+        justify-content: flex-end;
+    }
+
+    /* table-wrapper no overflow hidden on mobile to show cards */
+    .table-wrapper {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        overflow: visible;
+    }
+}
