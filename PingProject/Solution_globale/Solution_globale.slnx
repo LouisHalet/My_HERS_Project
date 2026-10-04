@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Projet_app_configuration/Projet_app_configuration.csproj" />
+  <Project Path="Projet_app_principale/Projet_app_principale.csproj" Id="3efbb280-c2d2-4e35-b7e0-ff8231dda775" />
+  <Project Path="Projet_tests_unitaires/Projet_tests_unitaires.csproj" Id="1f2f8b56-e948-4c66-8e70-3774d2240ff5" />
+</Solution>

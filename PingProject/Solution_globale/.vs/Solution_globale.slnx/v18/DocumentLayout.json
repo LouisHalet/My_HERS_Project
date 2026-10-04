@@ -1,0 +1,473 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\panelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\panelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\pingmonitoringform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\pingmonitoringform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\pingmonitoringform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\pingmonitoringform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\bottompanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\bottompanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\configdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\configdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\configsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\configsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\noconfigpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\noconfigpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\pingpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\pingpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\pingtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\pingtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\panelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\panelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\pingconfigpanelpart2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\pingconfigpanelpart2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\configdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\configdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\bottompanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\bottompanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\toppanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\toppanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\resetpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\resetpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\configsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\configsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\emailpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\emailpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\pingconfigpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\pingconfigpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\generalconfigurationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\generalconfigurationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\projet_app_configuration\\generalconfigurationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\generalconfigurationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\generalconfigurationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\generalconfigurationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_configuration\\projet_app_configuration.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{14D3328C-ACE6-228F-01A8-777784D2B220}|Projet_app_configuration\\Projet_app_configuration.csproj|solutionrelative:projet_app_configuration\\projet_app_configuration.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|c:\\users\\louisnonadmin\\documents\\halet_louis\\solution_globale\\projet_app_principale\\projet_app_principale.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3EFBB280-C2D2-4E35-B7E0-FF8231DDA775}|Projet_app_principale\\Projet_app_principale.csproj|solutionrelative:projet_app_principale\\projet_app_principale.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 22,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PingMonitoringForm.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingMonitoringForm.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\PingMonitoringForm.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingMonitoringForm.cs",
+              "RelativeToolTip": "Projet_app_principale\\PingMonitoringForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:41:17.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\Program.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\Program.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\Program.cs",
+              "RelativeToolTip": "Projet_app_principale\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:41:09.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PingMonitoringForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingMonitoringForm.Designer.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\PingMonitoringForm.Designer.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingMonitoringForm.Designer.cs",
+              "RelativeToolTip": "Projet_app_principale\\PingMonitoringForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:40:58.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Projet_app_principale.csproj",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\Projet_app_principale.csproj",
+              "RelativeDocumentMoniker": "Projet_app_principale\\Projet_app_principale.csproj",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\Projet_app_principale.csproj",
+              "RelativeToolTip": "Projet_app_principale\\Projet_app_principale.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-09T19:18:53.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Projet_app_configuration.csproj",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\Projet_app_configuration.csproj",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\Projet_app_configuration.csproj",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\Projet_app_configuration.csproj",
+              "RelativeToolTip": "Projet_app_configuration\\Projet_app_configuration.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-09T19:12:40.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GeneralConfigurationForm.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\GeneralConfigurationForm.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\GeneralConfigurationForm.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\GeneralConfigurationForm.cs",
+              "RelativeToolTip": "Projet_app_configuration\\GeneralConfigurationForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:12:35.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GeneralConfigurationForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\GeneralConfigurationForm.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\GeneralConfigurationForm.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\GeneralConfigurationForm.cs [Design]",
+              "RelativeToolTip": "Projet_app_configuration\\GeneralConfigurationForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:12:29.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GeneralConfigurationForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\GeneralConfigurationForm.Designer.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\GeneralConfigurationForm.Designer.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\GeneralConfigurationForm.Designer.cs",
+              "RelativeToolTip": "Projet_app_configuration\\GeneralConfigurationForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:12:27.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PingConfigPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\PingConfigPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\PingConfigPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\PingConfigPanel.cs",
+              "RelativeToolTip": "Projet_app_configuration\\PingConfigPanel.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAYwMUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:39.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EmailPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\EmailPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\EmailPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\EmailPanel.cs",
+              "RelativeToolTip": "Projet_app_configuration\\EmailPanel.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAqwDIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:37.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ConfigSetting.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\ConfigSetting.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\ConfigSetting.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\ConfigSetting.cs",
+              "RelativeToolTip": "Projet_app_configuration\\ConfigSetting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:35.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ResetPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\ResetPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\ResetPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\ResetPanel.cs",
+              "RelativeToolTip": "Projet_app_configuration\\ResetPanel.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAmwCgAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:42.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\Program.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\Program.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\Program.cs",
+              "RelativeToolTip": "Projet_app_configuration\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:42.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TopPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\TopPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\TopPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\TopPanel.cs",
+              "RelativeToolTip": "Projet_app_configuration\\TopPanel.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwB8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:43.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BottomPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\BottomPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\BottomPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\BottomPanel.cs",
+              "RelativeToolTip": "Projet_app_configuration\\BottomPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:34.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ConfigDevice.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\ConfigDevice.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\ConfigDevice.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\ConfigDevice.cs",
+              "RelativeToolTip": "Projet_app_configuration\\ConfigDevice.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswDkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:35.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PingConfigPanelPart2.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\PingConfigPanelPart2.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\PingConfigPanelPart2.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\PingConfigPanelPart2.cs",
+              "RelativeToolTip": "Projet_app_configuration\\PingConfigPanelPart2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:41.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\Utils.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\Utils.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\Utils.cs",
+              "RelativeToolTip": "Projet_app_configuration\\Utils.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:44.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PanelManager.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\PanelManager.cs",
+              "RelativeDocumentMoniker": "Projet_app_configuration\\PanelManager.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_configuration\\PanelManager.cs",
+              "RelativeToolTip": "Projet_app_configuration\\PanelManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T19:00:38.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PingTask.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingTask.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\PingTask.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingTask.cs",
+              "RelativeToolTip": "Projet_app_principale\\PingTask.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:09:01.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PingPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\PingPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PingPanel.cs",
+              "RelativeToolTip": "Projet_app_principale\\PingPanel.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:09:00.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PanelManager.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PanelManager.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\PanelManager.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\PanelManager.cs",
+              "RelativeToolTip": "Projet_app_principale\\PanelManager.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAqwEcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:08:58.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NoConfigPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\NoConfigPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\NoConfigPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\NoConfigPanel.cs",
+              "RelativeToolTip": "Projet_app_principale\\NoConfigPanel.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAACgAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:08:57.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Email.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\Email.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\Email.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\Email.cs",
+              "RelativeToolTip": "Projet_app_principale\\Email.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:08:56.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConfigSetting.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\ConfigSetting.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\ConfigSetting.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\ConfigSetting.cs",
+              "RelativeToolTip": "Projet_app_principale\\ConfigSetting.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:08:55.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConfigDevice.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\ConfigDevice.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\ConfigDevice.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\ConfigDevice.cs",
+              "RelativeToolTip": "Projet_app_principale\\ConfigDevice.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAswD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:08:54.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BottomPanel.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\BottomPanel.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\BottomPanel.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\BottomPanel.cs",
+              "RelativeToolTip": "Projet_app_principale\\BottomPanel.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAqwA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:08:53.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskManager.cs",
+              "DocumentMoniker": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\TaskManager.cs",
+              "RelativeDocumentMoniker": "Projet_app_principale\\TaskManager.cs",
+              "ToolTip": "C:\\Users\\louisNonAdmin\\Documents\\HALET_Louis\\Solution_globale\\Projet_app_principale\\TaskManager.cs",
+              "RelativeToolTip": "Projet_app_principale\\TaskManager.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T15:09:02.653Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "SMTPHost": "",
+  "SMTPPort": 0,
+  "SMTPEmail": "",
+  "SMTPPassword": "",
+  "EmailSenderUsers": "",
+  "NBDevice": 0,
+  "LastDateSave": null,
+  "listDevice": [],
+  "EnableSSL": false
+}
